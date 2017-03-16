@@ -8,20 +8,16 @@ class Homepage extends CI_Controller {
 
     public function index()
     {
-        /*Page dedicated JS - CSS - Google Fonts
-        $this->javascript = array("homepage.js");
-        */
-        $this->css = array("BP/homepage.css");
-        $this->GFont = array("Lobster","Puritan");
-
         /*Define single page content as usual*/
         $toView['page_content'] = date("H:i:s");
-        $toView['other_data'] = "<p>See you!</p>";
-
+        $toView['title'] = "Pushpam group";
         /*short cut to load->view("pages/page_name",$content,true)*/
-        $this->build_content($toView);
+        // $this->build_content($toView);
+        //  $this->load->view('pages/homepage',true);
+         $data['contents']  = 'pages/homepage';
+         $this->load->view('template', $data);
 
-        $this->render_page();
+        // $this->render_page();
     }
 }
 
